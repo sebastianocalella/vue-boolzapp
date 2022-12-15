@@ -88,5 +88,26 @@
 }
 
 #chat{
-    height: calc(100vh - 58px);
+    height: calc(100vh - (58px + 65px));
+}
+
+#search-contact{
+    height: 35px;
+    background-color: #fafafa;
+}
+
+#writer{
+    height: 65px;
+    background-color: #f3eeea;
+}
+
+#writer div:first-child{
+    height: 65px;
+}
+
+#writer input{
+    width: 100%;
+    padding: 10px 2px;
+    border: none;
+    border-radius: 8px;
 }

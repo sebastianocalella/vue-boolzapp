@@ -36,7 +36,7 @@
                         </div>
 
                         <!--notification Banner-->
-                        <div id="notification-banner" class="d-flex align-items-center">
+                        <div id="notification-banner" class="col-12 d-flex align-items-center">
                             <div class="my-icon">
                                 <i class="fa-solid fa-bell-slash"></i>
                             </div>
@@ -45,6 +45,19 @@
                                 <a href="#">attiva notifiche desktop</a>
                             </div>
                         </div>
+
+                        <div id="search-contact" class="col-12">
+                            <div class="row d-flex">
+                                <div class="col-2 text-center">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                                <div class="col-10">
+                                    <input type="text" placeholder="Cerca o inizia una nuova conversazione" name="" id="">
+                                </div>
+                            </div>
+                        </div>
+
+                        
 
                         <!--contacts list-->
                         <div v-for="(contact,index) in contacts" class="d-flex align-items-center"
@@ -93,7 +106,25 @@
                         </div>
                     </div>
 
-
+                    <div class="row">
+                        <div id="writer" class="col-12">
+                            <div class="container">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-1">
+                                        <i class="fa-regular fa-face-grin-wide"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        <input type="text" name="" id="" placeholder="Scrivi un messaggio">
+                                    </div>
+                                    <div class="col-1">
+                                        <i class="fa-solid fa-microphone"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
 
                 
