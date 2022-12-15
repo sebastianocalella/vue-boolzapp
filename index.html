@@ -45,8 +45,23 @@
                                 <a href="#">attiva notifiche desktop</a>
                             </div>
                         </div>
+
+                        <!--contact-->
+                        <div v-for="(contact,index) in contacts" class="d-flex align-items-center my-height"
+                        :class="'avatar' + contact.avatar">
+                            <div class="my-icon">
+                                <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
+                            </div>
+                            <div class="my-text">
+                                <p>{{contact.name}}</p>
+                                <p class="grey">ultimo messaggio inviato</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
+
                 <div class="col-8 vh-100">
                     <div class="row d-flex flex-column">
 

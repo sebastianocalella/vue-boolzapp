@@ -1,3 +1,8 @@
+.grey{
+    color: #cecccf;
+}
+
+
 #user{
     height: 50px;
     color: #b1b1b1;
@@ -9,12 +14,13 @@
     background-color: #8edafc;
 }
 
-#notification-banner .my-icon{
+.my-icon{
     background-color: white;
     border-radius: 50%;
     height: 45px;
     width: 45px;
     color: #8edafc;
+    overflow: hidden;
 }
 
 #notification-banner .my-icon i{
@@ -23,12 +29,20 @@
 
 }
 
-#notification-banner .my-text{
+.my-text{
     height: 60%;
     margin-left: 15px;
     font-size: .75rem;
 }
 
-#notification-banner .my-text p{
+.my-text p{
     margin-bottom: 0;
+}
+
+.my-height{
+    height: 65px;
+}
+
+.my-icon img{
+    width: 100%;
 }
