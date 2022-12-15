@@ -61,8 +61,8 @@
                     </div>
                 </div>
 
-                <!--contact chat-->
                 <div id="my-chat" class="col-8 vh-100">
+                    <!--contact info-->
                     <div id="contact-info" class="row d-flex align-items-center px-2">
                         <div class="col-1">
                             <div class="my-icon">
@@ -81,7 +81,21 @@
                             <i class="fa-solid fa-ellipsis-vertical ms-3"></i>
                         </div>
                     </div>
+
+                    <!--contact chat-->
+
+                    <div id="chat" class="row d-flex flex-column justify-content-end mx-3">
+                        <div v-for="message in contacts[0].messages"
+                        class="col-8"
+                        :class="(message.status==='sent') ? 'sent align-self-end' : 'received'">
+                            <p>{{message.message}}</p>
+                        </div>
+                    </div>
+
+
                 </div>
+
+                
             </div>
         </div>
     </div>

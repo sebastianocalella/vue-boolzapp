@@ -71,3 +71,22 @@
     background-image: url(./img/mine.jpg);
     border-left: 1px solid #cacaca;
 }
+
+.sent{
+    background-color: #d5f9ba;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.received{
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+#chat{
+    height: calc(100vh - 58px);
+}
