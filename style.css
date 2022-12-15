@@ -3,3 +3,32 @@
     color: #b1b1b1;
     background-color: #eaeaea;
 }
+
+#notification-banner{
+    height: 65px;
+    background-color: #8edafc;
+}
+
+#notification-banner .my-icon{
+    background-color: white;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    color: #8edafc;
+}
+
+#notification-banner .my-icon i{
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#notification-banner .my-text{
+    height: 60%;
+    margin-left: 15px;
+    font-size: .75rem;
+}
+
+#notification-banner .my-text p{
+    margin-bottom: 0;
+}
