@@ -2,9 +2,19 @@
     color: #cecccf;
 }
 
+.mblack{
+    color: black;
+}
+
 
 #user{
-    height: 50px;
+    height: 58px;
+    color: #b1b1b1;
+    background-color: #eaeaea;
+}
+
+#contact-info{
+    height: 58px;
     color: #b1b1b1;
     background-color: #eaeaea;
 }
@@ -21,6 +31,10 @@
     width: 45px;
     color: #8edafc;
     overflow: hidden;
+
+}
+.my-tools{
+    text-align: end;
 }
 
 #notification-banner .my-icon i{
@@ -39,10 +53,21 @@
     margin-bottom: 0;
 }
 
-.my-height{
+[class*=avatar]{
     height: 65px;
+    border-bottom: 1px solid #e9ebeb;
+}
+
+[class*=avatar]:hover{
+    background-color: #eaeaea;
+    cursor: pointer;
 }
 
 .my-icon img{
     width: 100%;
+}
+
+#my-chat{
+    background-image: url(./img/mine.jpg);
+    border-left: 1px solid #cacaca;
 }

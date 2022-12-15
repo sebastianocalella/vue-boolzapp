@@ -28,10 +28,10 @@
                             <div class="my-account col-2">
                                 <i class="fa-solid fa-user"></i>
                             </div>
-                            <div class="my-tools col-2">
+                            <div class="my-tools col">
                                 <i class="fa-solid fa-circle-notch me-3"></i>
                                 <i class="fa-solid fa-message me-3"></i>
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <i class="fa-solid fa-ellipsis-vertical me-3"></i>
                             </div>
                         </div>
 
@@ -46,8 +46,8 @@
                             </div>
                         </div>
 
-                        <!--contact-->
-                        <div v-for="(contact,index) in contacts" class="d-flex align-items-center my-height"
+                        <!--contacts list-->
+                        <div v-for="contact in contacts" class="d-flex align-items-center"
                         :class="'avatar' + contact.avatar">
                             <div class="my-icon">
                                 <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
@@ -61,10 +61,21 @@
                     </div>
                 </div>
 
-
-                <div class="col-8 vh-100">
-                    <div class="row d-flex flex-column">
-
+                <!--contact chat-->
+                <div id="my-chat" class="col-8 vh-100">
+                    <div id="contact-info" class="row d-flex align-items-center">
+                        <div class="my-icon col-2">
+                            <img :src="'./img/avatar_1.jpg'" alt="">
+                        </div>
+                        <div class="my-text col-7">
+                            <p class="mblack">pinco pallo</p>
+                            <p>ultimo accesso oggi alle 12:00</p>
+                        </div>
+                        <div class="col-3 text-end">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip ms-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical ms-3"></i>
+                        </div>
                     </div>
                 </div>
             </div>
