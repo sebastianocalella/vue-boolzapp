@@ -168,11 +168,15 @@ createApp({
                 }
             ],
 
-            chatValue: 0
+            chatValue: 0,
+            newText: ''
         }
     },
 
     methods: {
-
+        writeMessage(){
+            this.contacts[this.chatValue].messages.push({date : '15/12/2022 16:38:20',message : this.textMessage, status : 'sent'});
+            this.textMessage='';
+        }
     }
 }).mount('#app')
