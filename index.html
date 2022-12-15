@@ -67,12 +67,12 @@
                     <div id="contact-info" class="row d-flex align-items-center px-2">
                         <div class="col-1">
                             <div class="my-icon">
-                                <img :src="'./img/avatar_1.jpg'" alt="">
+                                <img :src="'./img/avatar_'+ (chatValue+1) + '.jpg'" alt="">
                             </div>
                         </div>
                         <div class="col-8">
                             <div class="my-text">
-                                <p class="mblack">pinco pallo</p>
+                                <p class="mblack">{{contacts[chatValue].name}}</p>
                                 <p>ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>
