@@ -166,8 +166,8 @@ createApp({
                         }
                     ],
                 }
-            ]
-            
+            ],
+            chatValue : 0
         }
     },
 

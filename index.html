@@ -47,8 +47,9 @@
                         </div>
 
                         <!--contacts list-->
-                        <div v-for="contact in contacts" class="d-flex align-items-center"
-                        :class="'avatar' + contact.avatar">
+                        <div v-for="(contact,index) in contacts" class="d-flex align-items-center"
+                        :class="'avatar' + contact.avatar"
+                        @click="chatValue=index">
                             <div class="my-icon">
                                 <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
                             </div>
@@ -85,7 +86,7 @@
                     <!--contact chat-->
 
                     <div id="chat" class="row d-flex flex-column justify-content-end mx-3">
-                        <div v-for="message in contacts[0].messages"
+                        <div v-for="message in contacts[chatValue].messages"
                         class="col-8"
                         :class="(message.status==='sent') ? 'sent align-self-end' : 'received'">
                             <p>{{message.message}}</p>
