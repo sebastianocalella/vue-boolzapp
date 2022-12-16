@@ -109,7 +109,7 @@
                             <div class="message-options"
                             :class="(message.optionStatus) ? '' : 'd-none'">
                                 <p>Message info</p>
-                                <p>Delete message</p>
+                                <p @click="deleteMessage()">Delete message</p>
                             </div>
                         </div>
                     </div>

@@ -195,7 +195,6 @@ createApp({
     },
 
     methods: {
-        //To remove
         writeMessage(){
             this.contacts[this.chatValue].messages.push({date : '15/12/2022 16:38:20', message : this.textMessage, status : 'sent', optionStatus: false});
             this.textMessage='';
@@ -214,6 +213,9 @@ createApp({
         messageOption(){
             this.contacts[this.chatValue].messages[this.messageIndex].optionStatus = 
             !this.contacts[this.chatValue].messages[this.messageIndex].optionStatus
+        },
+        deleteMessage(){
+            this.contacts[this.chatValue].messages.splice(this.messageIndex,1);
         }
     }
 }).mount('#app')
