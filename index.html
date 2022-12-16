@@ -63,7 +63,6 @@
 
                         <!--contacts list-->
                         <div v-for="(contact,index) in contacts" class="d-flex align-items-center"
-                        :class="'avatar' + contact.avatar"
                         :class="(contact.visible) ? '' : 'd-none'"
                         @click="chatValue=index">
                             <div class="my-icon">

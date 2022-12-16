@@ -185,7 +185,8 @@ createApp({
         },
         contactSearch(){
             this.contacts.forEach(contact => {
-                (contact.name.includes(this.searchContact)) ? contact.visible=true : contact.visible=false;
+                (contact.name.toLowerCase().includes(this.searchContact)) ? contact.visible=true : contact.visible=false;
+                console.log(contact.visible);
             });
         }
     }
