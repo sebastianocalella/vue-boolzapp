@@ -70,7 +70,7 @@
                             </div>
                             <div class="my-text">
                                 <p>{{contact.name}}</p>
-                                <p class="grey">{{contact.messages[contact.messages.length - 1].message}}</p>
+                                <p class="grey">{{(contact.messages.length>0) ? contact.messages[contact.messages.length - 1].message : ''}}</p>
                             </div>
                         </div>
 
