@@ -53,7 +53,8 @@
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                                 <div class="col-10">
-                                    <input v-model="searchContact" type="text" placeholder="Cerca o inizia una nuova conversazione">
+                                    <input v-model="searchContact" type="text" placeholder="Cerca o inizia una nuova conversazione"
+                                    @keyup="contactSearch()">
                                 </div>
                             </div>
                         </div>
@@ -63,6 +64,7 @@
                         <!--contacts list-->
                         <div v-for="(contact,index) in contacts" class="d-flex align-items-center"
                         :class="'avatar' + contact.avatar"
+                        :class="(contact.visible) ? '' : 'd-none'"
                         @click="chatValue=index">
                             <div class="my-icon">
                                 <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">

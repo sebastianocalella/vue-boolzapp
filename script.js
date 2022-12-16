@@ -169,7 +169,6 @@ createApp({
             ],
 
             chatValue: 0,
-            contactSearch: '',
         }
     },
 
@@ -183,6 +182,11 @@ createApp({
                 this.contacts[this.chatValue].messages.push({date : '15/12/2022 16:38:20', message : 'ok', status : 'received'})
             },1000
             )
+        },
+        contactSearch(){
+            this.contacts.forEach(contact => {
+                (contact.name.includes(this.searchContact)) ? contact.visible=true : contact.visible=false;
+            });
         }
     }
 }).mount('#app')
