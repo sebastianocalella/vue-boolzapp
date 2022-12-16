@@ -183,9 +183,7 @@ createApp({
         },
         writeMessage(){
             this.contacts[this.chatValue].messages.push({date : '15/12/2022 16:38:20', message : this.textMessage, status : 'sent'});
-            let message = this.textMessage;
             this.textMessage='';
-            return message;
         },
         botAnswer(){
             setTimeout(() => {
