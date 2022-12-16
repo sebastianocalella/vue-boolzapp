@@ -107,7 +107,7 @@
                             <p>{{message.message}}</p>
                             <i class="fa-solid fa-angle-down" @click="messageIndex=index; messageOption()"></i>
                             <div class="message-options"
-                            :class="(messageOptionStatus) ? '' : 'd-none'">
+                            :class="(message.optionStatus) ? '' : 'd-none'">
                                 <p>Message info</p>
                                 <p>Delete message</p>
                             </div>
