@@ -169,6 +169,8 @@ createApp({
             ],
 
             chatValue: 0,
+            messageOptionStatus: false,
+            messageIndex: 0,
         }
     },
 
@@ -186,8 +188,10 @@ createApp({
         contactSearch(){
             this.contacts.forEach(contact => {
                 (contact.name.toLowerCase().includes(this.searchContact)) ? contact.visible=true : contact.visible=false;
-                console.log(contact.visible);
             });
+        },
+        messageOption(){
+            this.contacts[this.chatValue].messages[this.messageIndex]
         }
     }
 }).mount('#app')
