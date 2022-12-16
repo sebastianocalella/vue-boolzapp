@@ -169,7 +169,7 @@ createApp({
             ],
 
             chatValue: 0,
-            newText: ''
+            contactSearch: '',
         }
     },
 
@@ -186,3 +186,5 @@ createApp({
         }
     }
 }).mount('#app')
+
+
