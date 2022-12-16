@@ -58,7 +58,7 @@
     border-bottom: 1px solid #e9ebeb;
 }
 
-[class*=avatar]:hover{
+.avatar:hover{
     background-color: #eaeaea;
     cursor: pointer;
 }
