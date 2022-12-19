@@ -174,8 +174,11 @@ createApp({
             messageIndex: 0,
 
             hour : luxon.DateTime.now().toFormat('h'),
-            minute : luxon.DateTime.now().toFormat('m'),
+            minute : luxon.DateTime.now().toFormat('mm'),
             second : luxon.DateTime.now().toFormat('s'),
+            day : luxon.DateTime.now().toFormat('dd'),
+            month : luxon.DateTime.now().toFormat('LL'),
+            year : luxon.DateTime.now().toFormat('y'),
         }
     },
 
@@ -188,12 +191,12 @@ createApp({
             }
         },
         writeMessage(){
-            this.contacts[this.chatValue].messages.push({date : this.hour + ":" + this.minute, message : this.textMessage, status : 'sent'});
+            this.contacts[this.chatValue].messages.push({date : this.day + '/' + this.month + '/' + this.year + ' ' + this.hour + ":" + this.minute, message : this.textMessage, status : 'sent'});
             this.textMessage='';
         },
         botAnswer(){
             setTimeout(() => {
-                this.contacts[this.chatValue].messages.push({date : this.hour + ":" + this.minute, message : 'ok', status : 'received'})
+                this.contacts[this.chatValue].messages.push({date : this.day + '/' + this.month + '/' + this.year + ' ' + this.hour + ":" + this.minute, message : 'ok', status : 'received'})
             },1000
             )
         },
