@@ -1,5 +1,4 @@
-import VueLuxon from "vue-luxon";
-Vue.use(VueLuxon);
+const DateTime = luxon.DateTime;
 
 const { createApp } = Vue
 
