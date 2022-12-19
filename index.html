@@ -105,7 +105,10 @@
                         class="col-8 d-flex justify-content-between position-relative"
                         :class="(message.status==='sent') ? 'sent align-self-end' : 'received'">
                             <p>{{message.message}}</p>
-                            <i class="fa-solid fa-angle-down" @click="messageIndex=index; messageOption()"></i>
+                            <div>
+                                <span>{{message.date}}</span>
+                                <i class="fa-solid fa-angle-down" @click="messageIndex=index; messageOption()"></i>
+                            </div>
                             <div class="message-options"
                             :class="(message.optionStatus) ? '' : 'd-none'">
                                 <p>Message info</p>
@@ -143,5 +146,6 @@
     <!--Vue 3-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./script.js"></script>
+    <script src="luxon.js"></script>
 </body>
 </html>

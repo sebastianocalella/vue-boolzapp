@@ -1,7 +1,10 @@
+import VueLuxon from "vue-luxon";
+Vue.use(VueLuxon);
 
 const { createApp } = Vue
 
 createApp({
+    
     data() {
         return {
             contacts: [
@@ -182,7 +185,7 @@ createApp({
             }
         },
         writeMessage(){
-            this.contacts[this.chatValue].messages.push({date : '15/12/2022 16:38:20', message : this.textMessage, status : 'sent'});
+            this.contacts[this.chatValue].messages.push({date : this.DateTime.now(), message : this.textMessage, status : 'sent'});
             this.textMessage='';
         },
         botAnswer(){
