@@ -109,7 +109,7 @@
                         :class="(message.status==='sent') ? 'sent align-self-end' : 'received'">
                             <p>{{message.message}}</p>
                             <div>
-                                <span>{{message.date}}</span>
+                                <span>{{message.date.slice(11,16)}}</span>
                                 <i class="fa-solid fa-angle-down" @click="messageIndex=index; messageOption()"></i>
                             </div>
                             <div class="message-options"
