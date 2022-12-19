@@ -1,4 +1,4 @@
-const DateTime = luxon.DateTime;
+
 
 const { createApp } = Vue
 
@@ -172,6 +172,10 @@ createApp({
 
             chatValue: 0,
             messageIndex: 0,
+
+            hour : luxon.DateTime.now().toFormat('h'),
+            minute : luxon.DateTime.now().toFormat('m'),
+            second : luxon.DateTime.now().toFormat('s'),
         }
     },
 
@@ -184,12 +188,12 @@ createApp({
             }
         },
         writeMessage(){
-            this.contacts[this.chatValue].messages.push({date : this.DateTime.now(), message : this.textMessage, status : 'sent'});
+            this.contacts[this.chatValue].messages.push({date : this.hour + ":" + this.minute, message : this.textMessage, status : 'sent'});
             this.textMessage='';
         },
         botAnswer(){
             setTimeout(() => {
-                this.contacts[this.chatValue].messages.push({date : '15/12/2022 16:38:20', message : 'ok', status : 'received'})
+                this.contacts[this.chatValue].messages.push({date : this.hour + ":" + this.minute, message : 'ok', status : 'received'})
             },1000
             )
         },
