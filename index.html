@@ -22,127 +22,133 @@
 <body>
     <div id="app">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-4 vh-100">
-                    <div class="row d-flex flex-column">
-
-                        <!-- User Banner -->
-                        <div id="user" class="col-12 d-flex justify-content-between align-items-center">
-                            <div class="my-account col-2">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                            <div class="my-tools col">
-                                <i class="fa-solid fa-circle-notch me-3"></i>
-                                <i class="fa-solid fa-message me-3"></i>
-                                <i class="fa-solid fa-ellipsis-vertical me-3"></i>
-                            </div>
-                        </div>
-
-                        <!--notification Banner-->
-                        <div id="notification-banner" class="col-12 d-flex align-items-center">
-                            <div class="my-icon">
-                                <i class="fa-solid fa-bell-slash"></i>
-                            </div>
-                            <div class="my-text">
-                                <p>Ricevi norifiche di nuovi messaggi</p>
-                                <a href="#">attiva notifiche desktop</a>
-                            </div>
-                        </div>
-
-                        <!--search contact-->
-                        <div id="search-contact" class="col-12">
-                            <div class="row d-flex">
-                                <div class="col-2 text-center">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </div>
-                                <div class="col-10">
-                                    <input v-model="searchContact" type="text" placeholder="Cerca o inizia una nuova conversazione"
-                                    @keyup="contactSearch()">
-                                </div>
-                            </div>
-                        </div>
-
-                        
-
-                        <!--contacts list-->
-                        <div v-for="(contact,index) in contacts" class="d-flex align-items-center avatar"
-                        :class="(contact.visible) ? '' : 'd-none'"
-                        @click="chatValue=index">
-                            <div class="my-icon">
-                                <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
-                            </div>
-                            <div class="w-100 my-text">
-                                <p>{{contact.name}}</p>
-                                <div class="w-100 d-flex justify-content-between">
-                                    <p class="grey">{{(contact.messages.length>0) ? contact.messages[contact.messages.length - 1].message : ''}}</p>
-                                    <p class="grey">{{contact.messages[contact.messages.length - 1].date.slice(0,10)}}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div id="my-chat" class="col-8 vh-100">
-                    <!--contact info-->
-                    <div id="contact-info" class="row d-flex align-items-center px-2">
-                        <div class="col-1">
-                            <div class="my-icon">
-                                <img :src="'./img/avatar_'+ (chatValue+1) + '.jpg'" alt="">
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="my-text">
-                                <p class="mblack">{{contacts[chatValue].name}}</p>
-                                <p>ultimo accesso oggi alle 12:00</p>
-                            </div>
-                        </div>
-                        <div class="col-3 text-end">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <i class="fa-solid fa-paperclip ms-3"></i>
-                            <i class="fa-solid fa-ellipsis-vertical ms-3"></i>
-                        </div>
-                    </div>
-
-                    <!--contact chat-->
-
-                    <div id="chat" class="row d-flex flex-column justify-content-end mx-3">
-                        <div v-for="(message,index) in contacts[chatValue].messages"
-                        class="col-8 d-flex justify-content-between position-relative"
-                        :class="(message.status==='sent') ? 'sent align-self-end' : 'received'">
-                            <p>{{message.message}}</p>
-                            <div>
-                                <span>{{message.date.slice(11,16)}}</span>
-                                <i class="fa-solid fa-angle-down" @click="messageIndex=index; messageOption()"></i>
-                            </div>
-                            <div class="message-options"
-                            :class="(message.optionStatus) ? '' : 'd-none'">
-                                <p>Message info</p>
-                                <p @click="deleteMessage()">Delete message</p>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="row d-flex justify-content-center position-relative">
+                <div id="green-banner"></div>
+                <div id="gray-banner"></div>
+                <div class="col-10 position-absolute my-window">
                     <div class="row">
-                        <div id="writer" class="col-12">
-                            <div class="container">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-1">
-                                        <i class="fa-regular fa-face-grin-wide"></i>
+                        <div class="col-4 bg-white">
+                            <div class="row d-flex flex-column">
+        
+                                <!-- User Banner -->
+                                <div id="user" class="col-12 d-flex justify-content-between align-items-center">
+                                    <div class="my-account col-2">
+                                        <i class="fa-solid fa-user"></i>
                                     </div>
-                                    <div class="col-10">
-                                        <input v-model="textMessage" type="text" placeholder="Scrivi un messaggio" @keyup.enter="chatting()">
+                                    <div class="my-tools col">
+                                        <i class="fa-solid fa-circle-notch me-3"></i>
+                                        <i class="fa-solid fa-message me-3"></i>
+                                        <i class="fa-solid fa-ellipsis-vertical me-3"></i>
                                     </div>
-                                    <div class="col-1">
-                                        <i class="fa-solid fa-microphone"></i>
+                                </div>
+        
+                                <!--notification Banner-->
+                                <div id="notification-banner" class="col-12 d-flex align-items-center">
+                                    <div class="my-icon">
+                                        <i class="fa-solid fa-bell-slash"></i>
+                                    </div>
+                                    <div class="my-text">
+                                        <p>Ricevi norifiche di nuovi messaggi</p>
+                                        <a href="#">attiva notifiche desktop</a>
+                                    </div>
+                                </div>
+        
+                                <!--search contact-->
+                                <div id="search-contact" class="col-12">
+                                    <div class="row d-flex">
+                                        <div class="col-2 text-center">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                        <div class="col-10">
+                                            <input v-model="searchContact" type="text" placeholder="Cerca o inizia una nuova conversazione"
+                                            @keyup="contactSearch()">
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                
+        
+                                <!--contacts list-->
+                                <div v-for="(contact,index) in contacts" class="d-flex align-items-center avatar"
+                                :class="(contact.visible) ? '' : 'd-none'"
+                                @click="chatValue=index">
+                                    <div class="my-icon">
+                                        <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
+                                    </div>
+                                    <div class="w-100 my-text">
+                                        <p>{{contact.name}}</p>
+                                        <div class="w-100 d-flex justify-content-between">
+                                            <p class="grey">{{(contact.messages.length>0) ? contact.messages[contact.messages.length - 1].message : ''}}</p>
+                                            <p class="grey">{{contact.messages[contact.messages.length - 1].date.slice(0,10)}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="my-chat" class="col-8">
+                            <!--contact info-->
+                            <div id="contact-info" class="row d-flex align-items-center px-2">
+                                <div class="col-1">
+                                    <div class="my-icon">
+                                        <img :src="'./img/avatar_'+ (chatValue+1) + '.jpg'" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="my-text">
+                                        <p class="mblack">{{contacts[chatValue].name}}</p>
+                                        <p>ultimo accesso oggi alle 12:00</p>
+                                    </div>
+                                </div>
+                                <div class="col-3 text-end">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i class="fa-solid fa-paperclip ms-3"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical ms-3"></i>
+                                </div>
+                            </div>
+        
+                            <!--contact chat-->
+        
+                            <div id="chat" class="row d-flex flex-column justify-content-end mx-3">
+                                <div v-for="(message,index) in contacts[chatValue].messages"
+                                class="col-8 d-flex justify-content-between position-relative"
+                                :class="(message.status==='sent') ? 'sent align-self-end' : 'received'">
+                                    <p>{{message.message}}</p>
+                                    <div>
+                                        <span>{{message.date.slice(11,16)}}</span>
+                                        <i class="fa-solid fa-angle-down" @click="messageIndex=index; messageOption()"></i>
+                                    </div>
+                                    <div class="message-options"
+                                    :class="(message.optionStatus) ? '' : 'd-none'">
+                                        <p>Message info</p>
+                                        <p @click="deleteMessage()">Delete message</p>
                                     </div>
                                 </div>
                             </div>
+        
+                            <div class="row">
+                                <div id="writer" class="col-12">
+                                    <div class="container">
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-1">
+                                                <i class="fa-regular fa-face-grin-wide"></i>
+                                            </div>
+                                            <div class="col-10">
+                                                <input v-model="textMessage" type="text" placeholder="Scrivi un messaggio" @keyup.enter="chatting()">
+                                            </div>
+                                            <div class="col-1">
+                                                <i class="fa-solid fa-microphone"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
                         </div>
-                    </div>
-                    
-                    
                 </div>
+            </div>
 
                 
             </div>

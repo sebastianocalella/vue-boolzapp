@@ -6,6 +6,22 @@
     color: black;
 }
 
+#green-banner{
+    width: 100%;
+    height: 20vh;
+    background-color: #009688;
+}
+
+#gray-banner{
+    width: 100%;;
+    height: 80vh;
+    background-color: #dbdbd2;
+}
+
+.my-window{
+    left: auto;
+    top: 20px;
+}
 
 #user{
     height: 58px;
@@ -56,6 +72,7 @@ p{
 .avatar{
     height: 65px;
     border-bottom: 1px solid #e9ebeb;
+    background-color: white;
 }
 
 .avatar:hover{
@@ -88,7 +105,7 @@ p{
 }
 
 #chat{
-    height: calc(100vh - (58px + 65px));
+    height: calc(95vh - (58px + 65px));
 }
 
 #chat i,
