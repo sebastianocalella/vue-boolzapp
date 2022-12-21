@@ -79,7 +79,7 @@
                                         <p>{{contact.name}}</p>
                                         <div class="w-100 d-flex justify-content-between">
                                             <p class="grey">{{(contact.messages.length>0) ? contact.messages[contact.messages.length - 1].message : ''}}</p>
-                                            <p class="grey">{{contact.messages[contact.messages.length - 1].date.slice(0,10)}}</p>
+                                            <p class="grey">{{(contact.messages.length>0) ? contact.messages[contact.messages.length - 1].date.slice(0,10) : ''}}</p>
                                         </div>
                                     </div>
                                 </div>
