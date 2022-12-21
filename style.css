@@ -119,8 +119,18 @@ p{
 }
 
 #search-contact{
-    height: 35px;
+    height: 45px;
     background-color: #fafafa;
+}
+
+#search-contact input{
+    width: 100%;
+    margin: 8px;
+}
+
+#search-contact i{
+    font-size: 1.2rem;
+    line-height: 2.7rem;
 }
 
 #writer{
